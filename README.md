@@ -3,6 +3,7 @@ The following project show the 2048 game demonstration.
 
 - The 2048 Game is completed written in Python3 language.
 - It has only **Game2048.py** executable file and complete program was written in the same file. 
+- After making a particular move in the game, the resulatant output is printed in the form of a grid with updated values in them.
 
 # Discussion Objectives
 
