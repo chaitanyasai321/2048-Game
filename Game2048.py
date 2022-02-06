@@ -1,11 +1,14 @@
 import random
 
 #The size defines the size of the grid 
+#Even if we change the size we can get the output as per our conditions
 size=4 
+
 #The value we need to reach for winning
 total=2048
 
 # new_grid() is called to create a grid of given size 
+#Everytime after making a particular move we use the new_grid() function to store the updated values and then again replace with the original gird value. 
 def new_grid(empty=False):
     new = []
     if empty:
@@ -18,6 +21,8 @@ def new_grid(empty=False):
     
 
 # add_new() is called to randomly initialize the values on the grid to start our game 
+# So after every move, we need to insert a value at an empty location.
+#So add_new() function does the process for us.
 def add_new():
     get = False
     # we are randomly initializing the value to grid
@@ -29,6 +34,7 @@ def add_new():
 
 
 #when move() is called all the values in the grid moved to a particular direction.   
+# We store our updated values in a new grid of defined size and again change them.
 def move():
     new = new_grid()
     for u in range(0,size):
@@ -39,7 +45,9 @@ def move():
                 count += 1
     return new
 
-# the reverse() function is used to reverse the particular row or column of the grid to calculate the sum 
+# the reverse() function is used to reverse the particular row or column of the grid to calculate the sum.
+# While moving our grid to right or down , if we reverse the grid then it makes our process easy for calculation
+# Hence we use this function for reversing the values in a grid.
 def reverse():
     new = new_grid(True)
     for u in range(0,size):
@@ -49,6 +57,7 @@ def reverse():
 
 
 # the traverse() function is called to convert all the row elements to columns elements and vice versa.
+#This function is mainly used if we need to move to upwards which makes us easy to update the values without changing the original grid.
 def transverse():
     new = new_grid(True)
     for u in range(0,size):
